@@ -1,16 +1,20 @@
-// import React from "react";
+import React from 'react';
 
-// const WeatherDisplay = ({ temperature, conditions }) => {
-//   const tempStyle = {
-//     color: temperature > 20 ? "red" : "blue",
-//   };
+const WeatherDisplay = ({ weather }) => {
+    return (
+        <div>
+            {weather.map((element, index) => (
+                <div key={index}>
+                    <p >
+                        Temperature: <span style={{ color: element.temperature > 20 ? "rgb(255, 0, 0)" : "rgb(0, 128, 0)" }}>{element.temperature}</span>
+                    </p>
+                    <p>
+                        Conditions: {element.conditions}
+                    </p>
+                </div>
+            ))}
+        </div>
+    );
+};
 
-//   return (
-//     <div>
-//       <p style={tempStyle}>{temperature}°C</p>
-//       <p>{conditions}</p>
-//     </div>
-//   );
-// };
-
-// export default WeatherDisplay;
+export default WeatherDisplay;
